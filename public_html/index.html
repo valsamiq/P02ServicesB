@@ -16,11 +16,11 @@
         <title>Principal</title>
     </head>
     <body ng-app="myApp" ng-controller="MuestraPeliculas">
-        <div class="container-fluid">
-            <h2 align="center">Lista</h2>
+        <div class="container">
+            <h2 align="center">Movie-List</h2>
             <div class="row">
                 <div class="col-lg-12">
-                    <div>
+                    <div align="center">
                         <select ng-model="numPeli">
                             <option ng-repeat="peli in peliculasController track by $index"
                                     value="{{$index}}">
@@ -28,25 +28,25 @@
                             </option>
                         </select>
                         <div>
-                            Director:{{peliculaController[2]}}<br/>
-                            Nombre:{{peliculaController[1]}}<br/>
-                            Año:{{peliculaController[3]}}
+                            Director:{{peliculasController[numPeli][2]}}<br/>
+                            Movie:{{peliculasController[numPeli][1]}}<br/>
+                            Año:{{peliculasController[numPeli][3]}}
                         </div>
                     </div>
                     <table class="table table-dark table-striped">
                         <thead>
                             <tr>
                                 <th>
-                                    Nombre
+                                    Name
                                 </th>
                                 <th>
-                                    Apellido
+                                    Surnames
                                 </th>
                                 <th>
-                                    Nacimiento
+                                    Birth Date
                                 </th>
                                 <th>
-                                    Nacionalidad 
+                                    Nationality
                                 </th>
                             </tr>
                         </thead>
@@ -63,56 +63,5 @@
                 </div>
             </div>
         </div>
-        
-        
-        
-        <!--
-        {{actoresController}}
-        <div ng-controller="MuestraPeliculas">
-            <table>
-                <tr>
-                    <td>---Nombre---</td>
-                    <td>---Apellido---</td>
-                </tr>
-                <tr ng-repeat="actor in actoresController track by $index">
-                    <td>{{actor[0]}}</td>
-                    <td>{{actor[1]}}</td>
-                </tr>
-            </table>
-        </div>
-        <br/>
-        <br/>
-        <h2>Info por Pelicula:</h2>
-        <br/>
-        <table>
-            <tr>
-                <td>
-                    Nombre de la pelicula:
-                    <select ng-model="numPeli">
-                        <option ng-repeat="peli in peliculasController track by $index"
-                                value="{{$index}}">
-                            {{peli[1]}}
-                        </option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    {{peliculasController[numPeli][0]}}
-                </td>
-            </tr>
-        </table>
-        <br/>
-        <br/>
-    
-        <table>
-            <tr ng-repeat="actor in peliculaController[0] track by $index"> 
-                <!-- Indica que sols recorre la posició 0, que es un array
-                <td>{{actor[0]}}</td>
-                <td>{{actor[1]}}</td>
-            </tr>
-        </table>
-        <br/>
-        <br/>-->
     </body>
 </html>
